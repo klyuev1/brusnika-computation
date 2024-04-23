@@ -1,0 +1,55 @@
+.navbar {
+  position: fixed;
+  top: 54px;
+  left: 0;
+  bottom: 0;
+  width: 200px; /* или любая другая необходимая ширина */
+  background-color: #f0f0f0; /* или любой другой цвет фона */
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar__top-box {
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.navbar__heading {
+  margin: 0;
+}
+
+.navbar__info {
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+.navbar__info-icon {
+  width: 10px;
+  height: 10px;
+  background-color: #333;
+  margin-left: 10px;
+}
+
+.navbar__middle-box {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.navbar__link {
+  text-decoration: none;
+  color: #333;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar__link-icon {
+  width: 10px;
+  height: 10px;
+  background-color: #333;
+  margin-right: 10px;
+}

@@ -1,0 +1,30 @@
+.main {
+  width: 100%;
+  
+}
+
+.main__container {
+  background-color: #A8A29D;
+  background: url(../../../ui/images/Main-title.svg) no-repeat center;
+  background-size: cover;
+  margin: 0 auto;
+  height: 850px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.main__title {
+  max-width: 600px;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+  color: #FFF;
+  font-family: 'Grtsk-Mega', 'Arial', sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 0.01em;
+  text-align: center;
+}

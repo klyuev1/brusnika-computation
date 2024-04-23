@@ -1,0 +1,103 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  box-sizing: border-box;
+}
+
+.table_head {
+  box-sizing: border-box;
+  border: 1px solid #14191A1F;
+  padding-top: 17px;
+  padding-bottom: 17px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.01em;
+}
+
+.table_d {
+  box-sizing: border-box;
+  border: 1px solid #14191A1F;
+  padding-top: 17px;
+  padding-bottom: 17px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.01em;
+  
+}
+
+.table__icon {
+  background: url(../../../ui/images/proj-file.svg) no-repeat center center;
+  width: 16px;
+  height: 14px;
+  margin-right: 8px;
+  -webkit-transition: background-image .1s linear;
+    -moz-transition: background-image .1s linear;
+    -o-transition: background-image .1s linear;
+    -ms-transition: background-image .1s linear;
+    transition: background-image .1s linear;
+}
+.table__td-button:hover .table__icon {
+  background-image: url(../../../ui/images/proj-file-hover.svg);
+}
+
+.table__delete {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: url(../../../ui/images/delete-button.svg) no-repeat center center;
+  width: 18px;
+  height: 19px;
+  cursor: pointer;
+  transition: background-image .1s linear;
+}
+.table__delete:hover {
+  background-image: url(../../../ui/images/delete-button-hover.svg);
+}
+
+
+.table__td-button {
+  display: flex;
+  /* align-items: center; */
+  color: #000;
+  text-decoration: none;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  text-align: start;
+  background-color: inherit;
+  cursor: pointer;
+  transition: color .2s linear;
+}
+.table__td-button:hover  {
+  color: #EF3B24;
+}
+
+
+.column1 {
+  text-align: start;
+  width: 75%;
+  border-left: 0;
+  padding-left: 24px;
+}
+.column2 {
+  width: 200px;
+  text-align: center;
+}
+.column3 { 
+  width: 200px;
+  text-align: center;
+}
+.column4 { 
+  width: 66px; 
+  text-align: center;
+  border-right: 0;
+}
+
+@media screen and (max-width: 1400px){
+  .column1 {
+    width: 65%;
+  }
+}

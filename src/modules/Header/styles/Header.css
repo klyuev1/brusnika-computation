@@ -1,0 +1,130 @@
+.header {
+  /* width: 100vw; */
+  background-color: #424242;
+  margin: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  height: 54px;
+
+}
+
+.header__margin {
+  padding-bottom: 54px;
+}
+
+.header__func {
+  /* max-width: 1920px; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+}
+
+.header__box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo-berp {
+  font-family: 'Grtsk-Tera', 'Arial', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  color: #FFF;
+  margin-right: 8px;
+  transition: opacity .1s linear;
+}
+.header__logo-berp:hover {
+  opacity: .8;
+}
+
+.header__br {
+  height: 24px;
+  width: 1px;
+  background-color: #616161;
+}
+
+.header__logo {
+  color: #FFF;
+  font-family: 'Grtsk-Mega', 'Arial', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  transition: opacity .1s linear;
+  text-transform: uppercase;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+
+}
+.header__logo:hover {
+  opacity: .7;
+}
+
+.header__link {
+  color: #A8A19A;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  margin-left: 12px;
+  transition: color .1s linear;
+}
+
+.header__link-first {
+  margin-left: 17px;
+}
+
+.header__link:hover {
+  color: #FFF;
+}
+
+.header__link.active {
+  color: #FFF;
+}
+
+.header__user {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-decoration: none;
+  color: #FFF;
+  margin-left: 50px;
+  transition: opacity .1s linear;
+}
+.header__user:hover {
+  opacity: 0.7;
+}
+
+.header__user-logo {
+  background: url(../../../ui/images/header-user-light.svg) no-repeat center;
+  background-color: #F9F9F9;
+  border-radius: 6px;
+  width: 30px;
+  height: 30px;
+  margin-left: 13px;
+}
+
+.header_purple {
+  background-color: #A34461;
+}
+
+.header_white-back {
+  background-color: #FFF;
+}

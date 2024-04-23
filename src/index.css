@@ -1,0 +1,57 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.app {
+  font-family: 'Grtsk-Exa', 'Arial', sans-serif;
+  margin: 0 auto;
+  width: 100%;
+  /* max-width: 1920px; */
+}
+
+/* Подключаем нормалайз */
+@import url(./ui/vendor/normalize.css);
+
+/* Подключаем шрифты */
+@import url(./ui/vendor/fonts/fonts.css);
+
+/* Правила для Register */
+@import url(./modules/Register/styles/index.css);
+
+/* Правила для Popups */
+@import url(./components/PopupWithForm/PopupWithForm.css);
+
+/* Правила для Projects */
+@import url(./modules/Projects/styles/Projects.css);
+@import url(./modules/Projects/styles/ProjectTable.css);
+
+/* Правила для Facades */
+@import url(./modules/Facades/styles/Facades.css);
+@import url(./modules/Facades/styles/Facade.css);
+
+/* Правила для Rooms */
+@import url(./modules/Rooms/styles/Rooms.css);
+@import url(./modules/Rooms/styles/RoomTable.css);
+@import url(./modules/Rooms/styles/Room.css);
+
+/* Правила для Header*/
+@import url(./modules/Header/styles/Header.css);
+
+/* Правила для Header*/
+@import url(./modules/Footer/styles/Footer.css);
+
+/* Правила для Profile*/
+@import url(./modules/Profile/styles/Profile.css);
+
+/* Правила для Navbar*/
+@import url(./modules/Navbar/styles/Navbar.css);
+
+/* Правила для MainPage*/
+@import url(./pages/MainPage/styles/Main.css);
+@import url(./pages/MainPage/styles/NavTab.css);
+@import url(./pages/MainPage/styles/AboutProject.css);
+@import url(./pages/MainPage/styles/Modules.css);
+@import url(./pages/MainPage/styles/AboutMe.css);
+
+/* Правила для NotFoundPage*/
+@import url(./pages/NotFoundPage/styles/NotFound.css);
