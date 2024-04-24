@@ -27,25 +27,29 @@ function Facades() {
 
   return (
     <>
-      <section className="facades">
-        <div className="fasades__up-container">
-          <div className="fasades__title-box">
-            <FacadeLogo />
-            <h2 className="fasades__title">Фасады</h2>
-          </div>
-          <button
-            className="fasades__button"
-            type="button"
-            onClick={handleCreateFacadeClick}
-          >
-            Создать фасад
-          </button>
-        </div>
+      <div className='block-with-navbar'>
         
-        <section className="elements">
-        {facades && facades.map((facade) => <Facade key={facade.id} facade={facade} />)}
+        <section className="facades">
+          <div className="fasades__up-container">
+            <div className="fasades__title-box">
+              <FacadeLogo />
+              <h2 className="fasades__title">Фасады</h2>
+            </div>
+            <button
+              className="fasades__button"
+              type="button"
+              onClick={handleCreateFacadeClick}
+            >
+              Создать фасад
+            </button>
+          </div>
+          
+          <section className="elements">
+          {facades && facades.map((facade) => <Facade key={facade.id} facade={facade} />)}
+          </section>
         </section>
-      </section>
+      
+      </div>
 
       <CreateFacadePopup />
       <GetFacadePopup />

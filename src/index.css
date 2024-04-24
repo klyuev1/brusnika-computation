@@ -9,6 +9,10 @@ html {
   /* max-width: 1920px; */
 }
 
+.block-with-navbar {
+  margin-left: 280px;
+}
+
 /* Подключаем нормалайз */
 @import url(./ui/vendor/normalize.css);
 

@@ -61,32 +61,32 @@ function Rooms() {
   }
   
   return (
-    <section className= 'rooms' >
+    <>
+      <div className='block-with-navbar'>
+        <section className= 'rooms' >
+          <div className='rooms__up-container'>
 
-      <div className='rooms__up-container'>
-
-        <div className='rooms__title-box'>
-          <Link to='/projects' className='rooms__title-logo' />
-          <h2 className='rooms__title'>Проекты | Помещения</h2>
-        </div>
-        
-        <div className='rooms__button-box'>
-          <button className='rooms__button rooms__button_csv' type='button'onClick={downloadCSV}>Выгрузить в CSV</button>
-          <button className='rooms__button' type='button' onClick={handleUpdateProjectClick}>Редактировать проект</button>
-          <button className='rooms__button' type='button' onClick={handleCreateRoomClick}>Создать помещение</button>
-        </div>
-        
+            <div className='rooms__title-box'>
+              <Link to='/projects' className='rooms__title-logo' />
+              <h2 className='rooms__title'>Проекты | Помещения</h2>
+            </div>
+            
+            <div className='rooms__button-box'>
+              <button className='rooms__button rooms__button_csv' type='button'onClick={downloadCSV}>Выгрузить в CSV</button>
+              <button className='rooms__button' type='button' onClick={handleUpdateProjectClick}>Редактировать проект</button>
+              <button className='rooms__button' type='button' onClick={handleCreateRoomClick}>Создать помещение</button>
+            </div>
       
+          </div>
+          <RoomTable />
+        </section>
       </div>
-
-      <RoomTable />
 
       <CreateRoomPopup />
       <GetRoomPopup />
       <UpdateProjectPopup />
 
-
-    </section>
+    </>
     
   );
 }

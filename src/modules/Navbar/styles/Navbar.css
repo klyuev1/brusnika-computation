@@ -3,7 +3,7 @@
   top: 54px;
   left: 0;
   bottom: 0;
-  width: 200px; /* или любая другая необходимая ширина */
+  width: 280px;
   background-color: #f0f0f0; /* или любой другой цвет фона */
   display: flex;
   flex-direction: column;
