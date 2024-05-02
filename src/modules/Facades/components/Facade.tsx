@@ -7,11 +7,12 @@ import { useAppDispatch } from '../../../store/hooks/hooks';
 import { BASE_URL } from '../../../consts/base-url';
 
 function Facade({facade}: FacadeProps) {
-
+  
   const dispatch = useAppDispatch();
   const [handleDeleteFacade, {error} ] = useDeleteFacadeMutation();
 
-  function handleDeleteClick() {
+  function handleDeleteClick(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+    event.stopPropagation();
     handleDeleteFacade(facade)
   }
 

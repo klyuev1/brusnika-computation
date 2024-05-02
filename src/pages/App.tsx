@@ -10,6 +10,7 @@ import RoomsPage from './RoomsPage';
 import FacadesPage from './FacadesPage';
 import ProfilePage from './ProfilePage';
 import NotFoundPage from './NotFoundPage';
+import TeploPage from './TeploPage';
 
 function App() {
   const dispatch = useAppDispatch();
@@ -32,7 +33,7 @@ function App() {
         <Route path='/teplo/projects' element={ <ProjectsPage /> }/>
         <Route path={`/teplo/projects/:projectID/rooms`} element={ <RoomsPage /> }/>
         <Route path='/teplo/facades' element={ <FacadesPage /> }/>
-        {/* <Route path='/teplo' element={}/> */}
+        <Route path='/teplo' element={<TeploPage />}/>
 
 
 

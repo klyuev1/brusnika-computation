@@ -9,6 +9,7 @@ import { openInfoTooltipFacade } from '../store/infoTooltipFacadeSlice';
 
 function CreateFacadePopup() {
   const [isLoading, setIsLoading] = useState(false);
+  const [resetFileInput, setResetFileInput] = useState(false);
   
   const [handleCreateFacade, {error}] = usePostFacadeMutation();
 
@@ -25,20 +26,27 @@ function CreateFacadePopup() {
   }
 
   const [name, setName] = React.useState<string>('');
-  const [imageFile, setImageFile] = React.useState<File | null>(null);
+  const [imageFile, setImageFile] = React.useState<File | undefined>(undefined);
   const [height, setHeight] = React.useState<number>();
   const [width, setWidth] = React.useState<number>();
   const [areaWindow, setAreaWindow] = React.useState<number>();
-  const [areaWall, setAreaWall] = React.useState<number>();
+  // const [areaWall, setAreaWall] = React.useState<number>();
 
   useEffect(() => {
     setName('');
-    setImageFile(null);
+    setImageFile(undefined);
     setHeight(undefined);
     setWidth(undefined);
     setAreaWindow(undefined);
-    setAreaWall(undefined);
+    setResetFileInput(true);
+    // setAreaWall(undefined);
   }, [isCreateFacadePopupOpen]);
+
+  useEffect(() => {
+    if (resetFileInput) {
+      setResetFileInput(false);
+    }
+  }, [resetFileInput]);
 
   // Заполнение стейт переменных
   function handleChangeName(e: React.ChangeEvent<HTMLInputElement>) {
@@ -63,9 +71,9 @@ function CreateFacadePopup() {
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setIsLoading(true);
-    console.log({ facade: { name, height, width, areaWindow, areaWall }, image: imageFile! })
+    console.log({ facade: { name, height, width, areaWindow }, image: imageFile! })
     try {
-      await handleCreateFacade({ facade: { name, height, width, areaWindow, areaWall }, image: imageFile! });
+      await handleCreateFacade({ facade: { name, height, width, areaWindow }, image: imageFile! });
       handleClose();
     } catch(e) {
       console.error('Error creating facade:', error);
@@ -93,6 +101,7 @@ function CreateFacadePopup() {
       <label className='popup__label'>
         <h3 className='popup__input-name'>Изображение:</h3>
         <input
+          key={resetFileInput ? 'reset' : 'no-reset'} 
           name='author' type='file' className='popup__input popup__input_file' required onChange={handleImageChange}
         />
       </label>
@@ -102,11 +111,11 @@ function CreateFacadePopup() {
           <h3 className='popup__input-name'>Высота фасада:</h3>
           <div className='popup__input-unit-block'>
             <input
-              name='author'
+              name='height'
               type='number'
               step='10'
               className='popup__input'
-              value={height}
+              value={height|| ''}
               required
               onChange={handleChangeHeight}
             />
@@ -117,11 +126,11 @@ function CreateFacadePopup() {
           <h3 className='popup__input-name'>Ширина фасада:</h3>
           <div className='popup__input-unit-block'>
             <input
-              name='author'
+              name='width'
               type='number'
               step='10'
               className='popup__input'
-              value={width}
+              value={width|| ''}
               required
               onChange={handleChangeWidth}
             />
@@ -132,13 +141,8 @@ function CreateFacadePopup() {
           <h3 className='popup__input-name'>Площадь окна/витража:</h3>
           <div className='popup__input-unit-block'>
             <input
-              name='author'
-              type='number'
-              step='0.1'
-              className='popup__input'
-              value={areaWindow}
-              required
-              onChange={handleChangeAreaWindow}
+              name='areaWindow' type='number' className='popup__input' required
+              value={areaWindow || ''} onChange={handleChangeAreaWindow} step='any'
             />
             <p className='popup__input-unit'>м²</p>
           </div>

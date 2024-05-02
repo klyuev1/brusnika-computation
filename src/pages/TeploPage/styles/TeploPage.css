@@ -1,0 +1,8 @@
+.main-page-teplo {
+  margin: 14px 0;
+  width: 100%;
+  min-height: 78vh;
+  
+  background: url(../../../ui/images/teplo-main-page.svg) center 0px no-repeat;
+  background-size: contain;
+}

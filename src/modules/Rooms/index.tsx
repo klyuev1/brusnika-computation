@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 // Глобальные импорты
 import { useParams, Link } from 'react-router-dom';
 import { useAppDispatch } from '../../store/hooks/hooks';
@@ -11,18 +11,22 @@ import CreateRoomPopup from './components/CreateRoomPopup';
 import GetRoomPopup from './components/GetRoomPopup';
 import { openUpdateProjectPopup } from '../Projects/store/projectPopupSlice';
 import UpdateProjectPopup from '../Projects/components/UpdateProjectPopup';
+import { useProjectFromLocalStorage } from './helpers/projectHelper';
 
 
 function Rooms() {
   
   const {projectID} = useParams();
   const dispatch = useAppDispatch();
+  const foundProject = useProjectFromLocalStorage(projectID!);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (typeof projectID === 'string') {
       dispatch(setProjectID(projectID));
     }
   }, [projectID, dispatch]);
+
+
 
   const handleCreateRoomClick = () => {
     dispatch(openCreateRoomPopup());
@@ -62,25 +66,22 @@ function Rooms() {
   
   return (
     <>
-      <div className='block-with-navbar'>
-        <section className= 'rooms' >
-          <div className='rooms__up-container'>
+      <section className= 'rooms' >
+        <div className='rooms__up-container'>
 
-            <div className='rooms__title-box'>
-              <Link to='/projects' className='rooms__title-logo' />
-              <h2 className='rooms__title'>Проекты | Помещения</h2>
-            </div>
-            
-            <div className='rooms__button-box'>
-              <button className='rooms__button rooms__button_csv' type='button'onClick={downloadCSV}>Выгрузить в CSV</button>
-              <button className='rooms__button' type='button' onClick={handleUpdateProjectClick}>Редактировать проект</button>
-              <button className='rooms__button' type='button' onClick={handleCreateRoomClick}>Создать помещение</button>
-            </div>
-      
+          <div className='rooms__title-box'>
+            <h2 className='rooms__title'>{foundProject?.name}</h2>
           </div>
-          <RoomTable />
-        </section>
-      </div>
+          
+          <div className='rooms__button-box'>
+            <button className='rooms__button rooms__button_csv' type='button'onClick={downloadCSV}>Выгрузить в CSV</button>
+            <button className='rooms__button' type='button' onClick={handleUpdateProjectClick}>Редактировать проект</button>
+            <button className='rooms__button' type='button' onClick={handleCreateRoomClick}>Создать помещение</button>
+          </div>
+    
+        </div>
+        <RoomTable />
+      </section>
 
       <CreateRoomPopup />
       <GetRoomPopup />

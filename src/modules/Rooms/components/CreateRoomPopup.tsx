@@ -7,7 +7,6 @@ import PopupRoomWithFacadeModule from './PopupRoomWithFacadeModule';
 import { Room } from "../consts/IRoom";
 import { usePostRoomMutation } from '../api/apiRoomSlice';
 import { closeCreateRoomPopup } from '../store/roomPopupSlice';
-
 import { useGetFacadesQuery } from '../../Facades/api/apiFacadeSlice';
 
 function CreateRoomPopup() {
@@ -51,28 +50,31 @@ function CreateRoomPopup() {
     setAreaRoom(e.target.value === '' ? undefined : +e.target.value);
   }
 
-  const [height,setHeight ] = React.useState<number>();
-  const [width,setWidth ] = React.useState<number>();
-  const [areaWall,setAreaWall ] = React.useState<number>();
-  const [areaWindow,setAreaWindow ] = React.useState<number>();
-  const [numberFacade, setNumberFacade] = React.useState('');
+  const [selectedFacades, setSelectedFacades] = React.useState<string[]>([]);
+
+  const handleSelectFacade = (facadeId: string) => {
+    if (selectedFacades.includes(facadeId)) {
+      setSelectedFacades(selectedFacades.filter(id => id !== facadeId));
+    } else {
+      setSelectedFacades([...selectedFacades, facadeId]);
+    }
+    console.log(selectedFacades)
+  };
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const room: Room = {
+    
+    const room = {
       number: number!,
       name: name!,
-      height: height!,
-      width: width!,
-      areaWall: areaWall!,
-      areaWindow: areaWindow!,
       areaRoom: areaRoom!,
-      numberFacade: numberFacade!,
     };
-    if (typeof projectID === 'string') {
-      await handleCreateRoom({ projectID, room })
+
+    if (typeof projectID === 'string' && selectedFacades.length > 0) {
+      await handleCreateRoom({ projectID, facadeIDs:selectedFacades, room }) // вот этот запрос переписать
+      console.log({ projectID, selectedFacades, room })
       handleClose();
-    }
+    } 
   } 
 
   return(
@@ -115,7 +117,7 @@ function CreateRoomPopup() {
         <h3 className='popup__input-name'>Площадь помещения:</h3>
         <input
           name='areaRoom' type='number' className='popup__input' required
-          onChange={handleChangeAreaRoom} value={areaRoom && areaRoom }
+          onChange={handleChangeAreaRoom} value={areaRoom || '' }
         />
       </label>
       
@@ -128,11 +130,7 @@ function CreateRoomPopup() {
             <PopupRoomWithFacadeModule 
               facade={facade}
               key={facade.id}
-              setHeight={setHeight}
-              setWidth={setWidth}
-              setAreaWall={setAreaWall}
-              setAreaWindow={setAreaWindow}
-              setNumberFacade={setNumberFacade}
+              handleSelectFacade={handleSelectFacade}
             />
           ))}
         </div>

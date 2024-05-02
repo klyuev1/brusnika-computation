@@ -1,7 +1,5 @@
 import React, { useEffect } from 'react';
-// Глобальные импорты
 import { useAppDispatch } from "../../store/hooks/hooks";
-// Внутримодульные импорты
 import { FacadeLogo } from "../../ui/icons/FacadeLogo";
 import Facade from "./components/Facade";
 import { useGetFacadesQuery } from "./api/apiFacadeSlice";
@@ -26,30 +24,24 @@ function Facades() {
 
 
   return (
-    <>
-      <div className='block-with-navbar'>
+    <>  
+      <section className="facades">
+        <div className="fasades__up-container">
+          <div className="fasades__title-box"><FacadeLogo /><h2 className="fasades__title">Фасады</h2></div>
+          <button
+            className="fasades__button"
+            type="button"
+            onClick={handleCreateFacadeClick}
+          >
+            Создать фасад
+          </button>
+        </div>
         
-        <section className="facades">
-          <div className="fasades__up-container">
-            <div className="fasades__title-box">
-              <FacadeLogo />
-              <h2 className="fasades__title">Фасады</h2>
-            </div>
-            <button
-              className="fasades__button"
-              type="button"
-              onClick={handleCreateFacadeClick}
-            >
-              Создать фасад
-            </button>
-          </div>
-          
-          <section className="elements">
-          {facades && facades.map((facade) => <Facade key={facade.id} facade={facade} />)}
-          </section>
+        <section className="elements">
+        {facades && facades.map((facade) => <Facade key={facade.id} facade={facade} />)}
         </section>
+      </section>
       
-      </div>
 
       <CreateFacadePopup />
       <GetFacadePopup />

@@ -4,52 +4,121 @@
   left: 0;
   bottom: 0;
   width: 280px;
-  background-color: #f0f0f0; /* или любой другой цвет фона */
   display: flex;
   flex-direction: column;
+  border-right: 1px solid #B3B4B4;
 }
 
 .navbar__top-box {
-  padding: 20px;
-  border-bottom: 1px solid #ccc;
+  padding: 18px 12px 8px 24px;
+  border-bottom: 1px solid #B3B4B4;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .navbar__heading {
   margin: 0;
+  padding: 0;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
 }
 
 .navbar__info {
   text-decoration: none;
-  color: #333;
+  color: #A8A19A;
   display: flex;
   align-items: center;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.01em;
+  transition: color .1s linear;
+}
+.navbar__info:hover  {
+  color: #000;
 }
 
 .navbar__info-icon {
-  width: 10px;
-  height: 10px;
-  background-color: #333;
-  margin-left: 10px;
+  width: 16px;
+  height: 16px;
+  background: url(../../../ui/images/help-icon.svg) no-repeat center;
+  margin-left: 8px;
+  -webkit-transition: background-image .1s linear;
+    -moz-transition: background-image .1s linear;
+    -o-transition: background-image .1s linear;
+    -ms-transition: background-image .1s linear;
+    transition: background-image .1s linear;
 }
+.navbar__info:hover .navbar__info-icon {
+  background-image: url(../../../ui/images/help-icon-active.svg);
+}
+
+.navbar__heading-back {
+  text-decoration: none;
+  color: black;
+  transition: color .1s linear;
+  display: flex;
+  align-items: center;
+}
+.navbar__heading-back:hover {
+  color: #EF3B24;
+}
+
+.navbar__heading-back-icon {
+  background: url(../../../ui/images/navbar-back-icon.svg) no-repeat center;
+  width: 8px;
+  height: 12px;
+  margin-right: 6px;
+  -webkit-transition: background-image .1s linear;
+    -moz-transition: background-image .1s linear;
+    -o-transition: background-image .1s linear;
+    -ms-transition: background-image .1s linear;
+    transition: background-image .1s linear;
+}
+.navbar__heading-back:hover .navbar__heading-back-icon {
+  background-image: url(../../../ui/images/navbar-back-icon-active.svg);
+}
+
 
 .navbar__middle-box {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 10px 24px;
 }
 
 .navbar__link {
   text-decoration: none;
   color: #333;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
   display: flex;
   align-items: center;
+  transition: color .1s linear;
+
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.01em;
+}
+
+.navbar__link:hover  {
+  color: #EF3B24;
 }
 
 .navbar__link-icon {
-  width: 10px;
-  height: 10px;
-  background-color: #333;
-  margin-right: 10px;
+  background: url(../../../ui/images/navbar-proj.svg) no-repeat center;
+  width: 16px;
+  height: 14px;
+  margin-right: 8px;
+  -webkit-transition: background-image .1s linear;
+    -moz-transition: background-image .1s linear;
+    -o-transition: background-image .1s linear;
+    -ms-transition: background-image .1s linear;
+    transition: background-image .1s linear;
+}
+.navbar__link:hover .navbar__link-icon {
+  background-image: url(../../../ui/images/navbar-proj-hover.svg);
 }

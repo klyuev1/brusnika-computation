@@ -1,9 +1,9 @@
 import React from 'react';
-import { useAppSelector } from '../../store/hooks/hooks';
 import Header from '../../modules/Header';
 import ProtectedRoute from '../../components/ProtectedRoute/ProtectedRoute';
 import Facades from '../../modules/Facades';
 import Footer from '../../modules/Footer';
+import Navbar from '../../modules/Navbar';
 
 
 function FacadesPage() {
@@ -11,8 +11,11 @@ function FacadesPage() {
   return (
     <>
       <Header />
-      <ProtectedRoute element={Facades} />
-      <Footer/>
+      <Navbar />
+      <div className='block-with-navbar'>
+        <ProtectedRoute element={Facades} />
+        <Footer/>
+      </div>
     </>
   );
 }

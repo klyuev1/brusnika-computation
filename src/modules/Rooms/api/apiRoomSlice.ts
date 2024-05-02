@@ -18,11 +18,14 @@ export const apiRoomSlice = createApi({
       providesTags: () => ['Room'],
     }),
 
-    postRoom: builder.mutation<Room, { projectID: string; room: Partial<Room> }>({
-      query: ({ projectID, room }) => ({
+    postRoom: builder.mutation<Room, { projectID: string; facadeIDs: string[]; room: Partial<Room> }>({
+      query: ({ projectID, facadeIDs, room }) => ({
         url: `/teplo/projects/${projectID}/rooms`,
         method: 'POST',
-        body: room,
+        body: {
+          ...room,
+          facadeIds: facadeIDs,
+        },
       }),
       invalidatesTags: ['Room'],
     }),

@@ -6,9 +6,12 @@ import { useDeleteRoomMutation } from '../api/apiRoomSlice';
 import { openSelectedRoom } from "../store/selectedRoomSlice";
 
 function Room({ room }: RoomProps ) {
+  console.log(room)
+
 
   const projectID = useAppSelector((state) => state.projectID);
 
+  
   const dispatch = useAppDispatch();
 
   const [handleDeleteRoom, {error}] = useDeleteRoomMutation();

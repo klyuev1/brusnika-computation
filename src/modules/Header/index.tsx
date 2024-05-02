@@ -15,8 +15,8 @@ function Header() {
           <div className='header__box'>
 
             <Link className='header__logo' to='/'>Брусника. Расчет</Link>
-            {isLoggedIn === true &&<NavLink className='header__link header__link-first' to='/teplo/projects'>Тепло</NavLink>}
-            {isLoggedIn === true &&<NavLink className='header__link' to='/teplo/facades'>Озеленение</NavLink>}
+            {isLoggedIn === true &&<NavLink className='header__link header__link-first' to='/teplo'>Тепло</NavLink>}
+            {isLoggedIn === true &&<NavLink className='header__link' to='/landscaping'>Озеленение</NavLink>}
           
           </div>
 

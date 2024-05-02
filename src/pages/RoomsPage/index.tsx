@@ -13,8 +13,10 @@ function RoomsPage() {
     <>
       <Header />
       <Navbar />
-      <ProtectedRoute element={Rooms}/>
-      <Footer/>
+      <div className='block-with-navbar'>
+        <ProtectedRoute element={Rooms}/>
+        <Footer/>
+      </div>
     </>
   );
 }

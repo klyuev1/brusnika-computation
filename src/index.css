@@ -59,3 +59,6 @@ html {
 
 /* Правила для NotFoundPage*/
 @import url(./pages/NotFoundPage/styles/NotFound.css);
+
+/* Правила для NotFoundPage*/
+@import url(./pages/TeploPage/styles/TeploPage.css);

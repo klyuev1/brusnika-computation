@@ -5,6 +5,12 @@ import { useGetProjectsQuery } from '../api/apiProjectSlice';
 
 function ProjectTable() {
   const {data: projects, error} = useGetProjectsQuery();
+
+  useEffect(() => {
+    if (projects) {
+      localStorage.setItem('projects', JSON.stringify(projects));
+    }
+  }, [projects]);
   
   useEffect(() => {
     if (error) {

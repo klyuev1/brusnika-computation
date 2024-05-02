@@ -2,14 +2,10 @@
   position: fixed;
   top: 0;
   left: 0;
-  
-
   justify-content: center;
   align-items: center;
-  
   width: 100%;
   height: 100%;
-  
   background-color: rgba(20, 25, 26, 0.32);
   display: none;
 }
@@ -54,12 +50,10 @@
 }
 .popup__button-close {
   background: url(../../ui/images/IconButtons.svg);
-  
   background-size: contain;
   width: 28px;
   height: 28px;
   border: 0;
-  
   transition: opacity 0.2s linear;
   cursor: pointer;
 }
@@ -67,7 +61,8 @@
   opacity: 0.6;
 }
 .popup__label {
-  display: block;
+  display: flex;
+  flex-direction: column;
   margin: 24px 0 0;
   min-width: 144px;
   position: relative;
@@ -76,17 +71,17 @@
 .popup__input-name {
   margin: 0;
   margin-bottom: 12px;
-
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
   line-height: 16px;
   letter-spacing: 0.12px;
-  
   color: #a8a19a;
 }
 
 .popup__input {
+  display: flex;
+  align-items: center;
   margin: 0;
   padding: 0;
   padding: 6px;
@@ -97,8 +92,6 @@
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.12px;
-  
-
   box-sizing: border-box;
   border-radius: 4px; 
   border: 1px solid rgba(20, 25, 26, 0.12);
@@ -106,12 +99,10 @@
 }
 .popup__input-error {
   margin: 0;
-  
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
   line-height: 16px;
-
   color: #ef3b24;
 }
 
@@ -128,22 +119,16 @@
   padding: 0;
   height: 32px;
   width: 100%;
-
-
-  
   font-size: 12px;
   font-weight: 500;
   line-height: 16px;
   letter-spacing: 0.12px;
   text-align: center;
   cursor: pointer;
-
   border: none;
   border-radius: 4px;
-  
   background: #424242;
   color: #fff;
-
   transition: opacity .1s linear;
 }
 
@@ -196,3 +181,128 @@
 .popup__input_file {
   height: 36px;
 }
+
+.popup__img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  object-fit: contain;
+  max-height: 480px;
+  margin-bottom: 6px;
+}
+
+.popup-facade-room__box {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  overflow: auto;
+  box-sizing: border-box;
+  gap: 5px;
+  padding-bottom: 12px;
+}
+
+.popup-facade-room {
+  border-radius: 4px;
+  border: 2px rgba(20, 25, 26, 0.12) solid;
+  transition: border .1s linear;
+  position: relative;
+  box-sizing: border-box;
+  /* height: 350px; */
+}
+
+.popup-facade-room__input {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+}
+
+.popup-facade-room__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 350px;
+}
+.popup-facade-room__img {
+  width: 187px;
+  height: 312px;
+  object-fit: cover;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+}
+
+
+.popup-facade-room__title {
+  text-align: center;
+  margin: 12px auto;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.12px;
+  color: #000;
+}
+
+.popup__room-div {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(4, 1fr); /* Два столбца с динамическими размерами */
+  grid-template-rows: repeat(5, auto);
+  gap: 10px;
+  
+  
+  grid-template-areas:
+  "td1 td2 td2 td2"
+  "td3 td3 td4 td5"
+  "td6 td6 td7 td7"
+  "td8 td8 td8 td8"
+  ;
+}
+
+.popup__room-info {
+  display: block;
+  margin: 24px 0 0;
+  position: relative;
+}
+
+.td1 {
+  grid-area: td1;
+  min-width: none;
+}
+
+.td2 {
+  grid-area: td2;
+  min-width: none;
+}
+
+.td3 {
+  grid-area: td3;
+  min-width: none;
+}
+
+.td4 {
+  grid-area: td4;
+  min-width: none;
+}
+
+.td5 {
+  grid-area: td5;
+  min-width: none;
+}
+
+.td6 {
+  grid-area: td6;
+  min-width: none;
+}
+
+.td7 {
+  grid-area: td7;
+  min-width: none;
+}
+
+.td8 {
+  grid-area: td8;
+  min-width: none;
+}
+
