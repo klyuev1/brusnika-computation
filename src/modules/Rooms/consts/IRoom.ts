@@ -1,5 +1,6 @@
-export interface Room {
+export interface IRoom {
   id?: string;
+  floor: number;
   number: string;
   name: string;
   height: number;
@@ -9,9 +10,9 @@ export interface Room {
   areaRoom: number;
   numberFacade: string;
   heatLoss?: number;
-
+  facadesId?: number[];
 }
 
 export interface RoomProps {
-  room: Room;
+  room: IRoom;
 }

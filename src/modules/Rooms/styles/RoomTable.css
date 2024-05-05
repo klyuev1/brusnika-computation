@@ -1,3 +1,12 @@
+/* .rooms__table-row {
+  display: block;
+  width: 100%;
+}
+
+.rooms__floor {
+  width: 100%;
+} */
+
 .room-column1 {
   text-align: center;
   width: 5%;
@@ -32,3 +41,4 @@
     width: 45%;
   }
 }
+

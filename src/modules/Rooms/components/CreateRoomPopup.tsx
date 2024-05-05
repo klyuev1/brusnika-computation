@@ -4,7 +4,7 @@ import PopupWithForm from '../../../components/PopupWithForm/PopupWithForm';
 import { useAppDispatch, useAppSelector } from '../../../store/hooks/hooks';
 // Внутримодульные импорты
 import PopupRoomWithFacadeModule from './PopupRoomWithFacadeModule';
-import { Room } from "../consts/IRoom";
+// import { Room } from "../consts/IRoom";
 import { usePostRoomMutation } from '../api/apiRoomSlice';
 import { closeCreateRoomPopup } from '../store/roomPopupSlice';
 import { useGetFacadesQuery } from '../../Facades/api/apiFacadeSlice';
@@ -18,10 +18,9 @@ function CreateRoomPopup() {
 
   const dispatch = useAppDispatch();
   const isOpen = useAppSelector(state => state.roomPopup.isCreateRoomPopupOpen);
-  const handleClose = () => {
-    dispatch(closeCreateRoomPopup());
-  }
-
+  const handleClose = () => dispatch(closeCreateRoomPopup());
+  
+  const [floor, setFloor] = React.useState<number | undefined>();
   const [number, setNumber] = React.useState('');
   const [name, setName] = React.useState('');
   const [areaRoom, setAreaRoom] = React.useState<number | undefined>();
@@ -34,12 +33,16 @@ function CreateRoomPopup() {
   },[error])
 
   React.useEffect(() => {
+    setFloor(undefined);
     setNumber('');
     setName('');
     setAreaRoom(undefined);
   }, [isOpen]);
 
 
+  function handleChangeFloor(e: React.ChangeEvent<HTMLInputElement>) {
+    setFloor(e.target.value === '' ? undefined : +e.target.value);
+  }
   function handleChangeNumber(e: React.ChangeEvent<HTMLInputElement>) {
     setNumber(e.target.value);
   }
@@ -60,19 +63,19 @@ function CreateRoomPopup() {
     }
     console.log(selectedFacades)
   };
-
+    
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     
     const room = {
+      floor: floor!,
       number: number!,
       name: name!,
       areaRoom: areaRoom!,
     };
 
     if (typeof projectID === 'string' && selectedFacades.length > 0) {
-      await handleCreateRoom({ projectID, facadeIDs:selectedFacades, room }) // вот этот запрос переписать
-      console.log({ projectID, selectedFacades, room })
+      await handleCreateRoom({ projectID, facadeIDs:selectedFacades, room })
       handleClose();
     } 
   } 
@@ -86,13 +89,23 @@ function CreateRoomPopup() {
     isClose={handleClose}
     onSubmit={handleSubmit}
     >
-      <label className='popup__label'>
-        <h3 className='popup__input-name'>Номер комнаты:</h3>
-        <input
-          name='numberRoom' type='text' className='popup__input' required
-          onChange={handleChangeNumber} value={number}
-        />
-      </label>
+      <div className='popup__input-section'>
+        <label className='popup__label'>
+          <h3 className='popup__input-name'>Номер этажа:</h3>
+          <input
+            name='floor' type='number' className='popup__input' required
+            onChange={handleChangeFloor} value={floor}
+          />
+        </label>      
+
+        <label className='popup__label'>
+          <h3 className='popup__input-name'>Номер комнаты:</h3>
+          <input
+            name='numberRoom' type='text' className='popup__input' required
+            onChange={handleChangeNumber} value={number}
+          />
+        </label>
+      </div>
       
       <label className='popup__label'>
         <h3 className='popup__input-name'>Наименование комнаты:</h3>

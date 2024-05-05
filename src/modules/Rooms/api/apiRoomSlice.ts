@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { Room } from '../consts/IRoom';
+import { IRoom } from '../consts/IRoom';
 import { BASE_URL } from "../../../consts/base-url";
 
 export const apiRoomSlice = createApi({
@@ -11,14 +11,14 @@ export const apiRoomSlice = createApi({
   tagTypes: ['Room'],
   endpoints: builder => ({
     
-    getRooms: builder.query<Room[], {projectID: string}>({
+    getRooms: builder.query<IRoom[], {projectID: string}>({
       query: ({projectID}) => ({
         url: `/teplo/projects/${projectID}/rooms`
       }),
       providesTags: () => ['Room'],
     }),
 
-    postRoom: builder.mutation<Room, { projectID: string; facadeIDs: string[]; room: Partial<Room> }>({
+    postRoom: builder.mutation<IRoom, { projectID: string; facadeIDs: string[]; room: Partial<IRoom> }>({
       query: ({ projectID, facadeIDs, room }) => ({
         url: `/teplo/projects/${projectID}/rooms`,
         method: 'POST',
@@ -30,7 +30,7 @@ export const apiRoomSlice = createApi({
       invalidatesTags: ['Room'],
     }),
 
-    deleteRoom: builder.mutation<Room, { projectID: string; room: Partial<Room> }>({
+    deleteRoom: builder.mutation<IRoom, { projectID: string; room: Partial<IRoom> }>({
       query: ({ projectID, room }) => ({
         url: `/teplo/projects/${projectID}/rooms/${room.id}`,
         method: 'DELETE',

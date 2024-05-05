@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 // Глобальные импорты
 import { useEffect } from 'react';
 import { useAppSelector } from '../../../store/hooks/hooks';
 // Внутримодульные импорты
 import Room from './Room';
 import { useGetRoomsQuery } from '../api/apiRoomSlice';
+import { IRoom } from '../consts/IRoom';
+
+// Остановился здесь
+// Остановился здесь
+// Остановился здесь
+// Остановился здесь
+// Остановился здесь
 
 function RoomTable() {
   
@@ -17,6 +24,22 @@ function RoomTable() {
       console.log(error)
     }
   },[error])
+
+  const floorRooms: Record<string, IRoom[]> = useMemo(() => {
+    const floors: Record<string, IRoom[]> = {};
+    if (rooms) {
+      rooms.forEach((room: IRoom) => {
+        const floor = room.floor.toString();
+        if (!floors[floor]) {
+          floors[floor] = [];
+        }
+        floors[floor].push(room);
+      });
+    }
+    console.log(floors)
+    return floors;
+  }, [rooms]);
+  
 
   return (
   <table className='table'>
@@ -32,7 +55,16 @@ function RoomTable() {
       </tr>
     </thead>
 
-    <tbody>
+    <tbody className='rooms__table-row'>
+      
+      {Object.keys(floorRooms).map(floor => (
+        <div className='rooms__floor' key={floor}>
+          {floorRooms[floor].map((room: IRoom) => (
+            <Room room={room} key={room.id} />
+          ))}
+        </div>
+      ))}
+
       {rooms && rooms.map(room => (
 
         <Room 

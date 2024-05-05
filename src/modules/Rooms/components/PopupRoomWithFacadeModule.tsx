@@ -10,7 +10,7 @@ function PopupRoomWithFacadeModule({facade, handleSelectFacade}: FacadeModule) {
 
   return(
     <div className='popup-facade-room'>
-      <input type='radio' name="facade" className='popup-facade-room__input' onChange={handleRadioChange} required />
+      <input type='checkbox' name="facade" className='popup-facade-room__input' onChange={handleRadioChange} />
       <div className='popup-facade-room__card'>
         <img src={`${BASE_URL}/${facade.link}`} className='popup-facade-room__img'  alt='facade'/>
         <h3 className='popup-facade-room__title'>{facade.name}</h3>

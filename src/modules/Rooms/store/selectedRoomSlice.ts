@@ -1,13 +1,14 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { Room } from '../consts/IRoom';
+import { IRoom } from '../consts/IRoom';
 
 interface selectedRoomState {
-  selectedRoom: Room,
+  selectedRoom: IRoom,
 }
 
 const initialState: selectedRoomState = {
   selectedRoom: {
     id: '',
+    floor: 0,
     number: '',
     name: '',
     height: 0,
@@ -24,12 +25,12 @@ const selectedRoomSlice = createSlice({
   name: 'selectedRoom',
   initialState,
   reducers: {
-    openSelectedRoom(state, action: PayloadAction<Room>) {
+    openSelectedRoom(state, action: PayloadAction<IRoom>) {
       state.selectedRoom = action.payload;  
     },
     closeSelectedRoom(state) {
       state.selectedRoom = { 
-        id: '', number: '', name: '', height: 0, width: 0, areaWall: 0, areaWindow: 0, areaRoom: 0, numberFacade: '', heatLoss: 0, 
+        id: '', floor: 0, number: '', name: '', height: 0, width: 0, areaWall: 0, areaWindow: 0, areaRoom: 0, numberFacade: '', heatLoss: 0, 
       };  
     }
   }
