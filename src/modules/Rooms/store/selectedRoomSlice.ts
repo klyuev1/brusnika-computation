@@ -1,37 +1,41 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { IRoom } from '../consts/IRoom';
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { IRoom } from "../consts/IRoom";
 
 interface selectedRoomState {
-  selectedRoom: IRoom,
+  selectedRoom: IRoom;
 }
 
 const initialState: selectedRoomState = {
   selectedRoom: {
-    id: '',
+    id: "",
     floor: 0,
-    number: '',
-    name: '',
-    height: 0,
-    width: 0,
-    areaWall: 0,
-    areaWindow: 0,
+    number: "",
+    name: "",
     areaRoom: 0,
-    numberFacade: '',
+    numberFacade: "",
     heatLoss: 0,
+    facades: undefined
   }
 };
 
 const selectedRoomSlice = createSlice({
-  name: 'selectedRoom',
+  name: "selectedRoom",
   initialState,
   reducers: {
     openSelectedRoom(state, action: PayloadAction<IRoom>) {
-      state.selectedRoom = action.payload;  
+      state.selectedRoom = action.payload;
     },
     closeSelectedRoom(state) {
-      state.selectedRoom = { 
-        id: '', floor: 0, number: '', name: '', height: 0, width: 0, areaWall: 0, areaWindow: 0, areaRoom: 0, numberFacade: '', heatLoss: 0, 
-      };  
+      state.selectedRoom = {
+        id: "",
+        floor: 0,
+        number: "",
+        name: "",
+        areaRoom: 0,
+        numberFacade: "",
+        heatLoss: 0,
+        facades: undefined
+      };
     }
   }
 });

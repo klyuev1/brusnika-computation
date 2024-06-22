@@ -5,40 +5,75 @@
 
 .rooms__floor {
   width: 100%;
+}
+
+.table_row {
+  width: 100%;
 } */
+
+.table__floor-button {
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  color: inherit;
+  cursor: pointer;
+  /* text-decoration: "underline"; */
+}
+
+.table__floor {
+  margin: 0;
+  padding: 0;
+  display: block; /* Делаем элемент блочным */
+  width: 100%;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  margin-left: 6px;
+
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.01em;
+  /* border: 1px solid #b3b4b4; */
+}
+/* .table__floor:hover {
+  color: #ef3b24;
+} */
+
+.table__td {
+  border: 1px solid #b3b4b4;
+}
 
 .room-column1 {
   text-align: center;
   width: 5%;
   border-left: 0;
-  
 }
 .room-column2 {
   width: 60%;
   text-align: start;
   padding-left: 24px;
 }
-.room-column3 { 
+.room-column3 {
   width: 10%;
   text-align: center;
 }
-.room-column4 { 
+.room-column4 {
   width: 10%;
   text-align: center;
 }
-.room-column5 { 
+.room-column5 {
   width: 10%;
   text-align: center;
 }
-.room-column6 { 
-  width: 5%; 
+.room-column6 {
+  width: 5%;
   text-align: center;
   border-right: 0;
 }
 
-@media screen and (max-width: 1440px){
+@media screen and (max-width: 1440px) {
   .room-column2 {
     width: 45%;
   }
 }
-

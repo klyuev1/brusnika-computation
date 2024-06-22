@@ -1,4 +1,4 @@
-/* .table__td-button-room {
+.table__td-button-room {
   display: flex;
   color: #000;
   text-decoration: none;
@@ -9,16 +9,16 @@
   text-align: start;
   background-color: inherit;
   cursor: pointer;
-  transition: color .2s linear;
-} */
+  transition: color 0.2s linear;
+}
 
-/* .table__td-button-room:hover  {
-  color: #EF3B24;
-} */
+.table__td-button-room:hover {
+  color: #ef3b24;
+}
 
-/* .table__td-button-room:hover .table_d {
-  color: #EF3B24;
-} */
-/* .table_row:hover .table__td-button-room {
-  color: #EF3B24;
-} */
+.table__td-button-room:hover .table_d {
+  color: #ef3b24;
+}
+.table_row:hover .table__td-button-room {
+  color: #ef3b24;
+}

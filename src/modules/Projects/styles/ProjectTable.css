@@ -2,11 +2,12 @@
   width: 100%;
   border-collapse: collapse;
   box-sizing: border-box;
+  border: 1px solid #b3b4b4;
 }
 
 .table_head {
   box-sizing: border-box;
-  border: 1px solid #B3B4B4;
+  border: 1px solid #b3b4b4;
   padding-top: 17px;
   padding-bottom: 17px;
   font-size: 12px;
@@ -17,14 +18,13 @@
 
 .table_d {
   box-sizing: border-box;
-  border: 1px solid #B3B4B4;
+  border: 1px solid #b3b4b4;
   padding-top: 17px;
   padding-bottom: 17px;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.01em;
-  
 }
 
 .table__icon {
@@ -32,11 +32,11 @@
   width: 12px;
   height: 15px;
   margin-right: 8px;
-  -webkit-transition: background-image .1s linear;
-    -moz-transition: background-image .1s linear;
-    -o-transition: background-image .1s linear;
-    -ms-transition: background-image .1s linear;
-    transition: background-image .1s linear;
+  -webkit-transition: background-image 0.1s linear;
+  -moz-transition: background-image 0.1s linear;
+  -o-transition: background-image 0.1s linear;
+  -ms-transition: background-image 0.1s linear;
+  transition: background-image 0.1s linear;
 }
 .table__td-button:hover .table__icon {
   background-image: url(../../../ui/images/proj-file-hover.svg);
@@ -50,12 +50,11 @@
   width: 18px;
   height: 19px;
   cursor: pointer;
-  transition: background-image .1s linear;
+  transition: background-image 0.1s linear;
 }
 .table__delete:hover {
   background-image: url(../../../ui/images/delete-button-hover.svg);
 }
-
 
 .table__td-button {
   display: flex;
@@ -69,12 +68,11 @@
   text-align: start;
   background-color: inherit;
   cursor: pointer;
-  transition: color .1s linear;
+  transition: color 0.1s linear;
 }
-.table__td-button:hover  {
-  color: #EF3B24;
+.table__td-button:hover {
+  color: #ef3b24;
 }
-
 
 .column1 {
   text-align: start;
@@ -86,17 +84,17 @@
   width: 200px;
   text-align: center;
 }
-.column3 { 
+.column3 {
   width: 200px;
   text-align: center;
 }
-.column4 { 
-  width: 66px; 
+.column4 {
+  width: 66px;
   text-align: center;
   border-right: 0;
 }
 
-@media screen and (max-width: 1400px){
+@media screen and (max-width: 1400px) {
   .column1 {
     width: 65%;
   }
