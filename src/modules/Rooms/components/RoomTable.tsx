@@ -14,7 +14,7 @@ import { IRoom } from "../consts/IRoom";
 // Остановился здесь
 
 function RoomTable() {
-  const projectID = useAppSelector((state) => state.projectID);
+  const projectID = useAppSelector(state => state.projectID);
 
   const { data: rooms, error } = useGetRoomsQuery({ projectID });
 
@@ -22,7 +22,7 @@ function RoomTable() {
 
   const toggleFloor = (floor: string) => {
     if (expandedFloors.includes(floor)) {
-      setExpandedFloors(expandedFloors.filter((f) => f !== floor));
+      setExpandedFloors(expandedFloors.filter(f => f !== floor));
     } else {
       setExpandedFloors([...expandedFloors, floor]);
     }
@@ -31,7 +31,7 @@ function RoomTable() {
   const groupRoomsByFloor = (): { [key: string]: IRoom[] } => {
     const groupedRooms: { [key: string]: IRoom[] } = {};
     if (rooms) {
-      rooms.forEach((room) => {
+      rooms.forEach(room => {
         if (!groupedRooms[room.floor]) {
           groupedRooms[room.floor] = [];
         }
@@ -62,7 +62,7 @@ function RoomTable() {
       </thead>
 
       <tbody className="rooms__table-row">
-        {sortedFloors.map((floor) => (
+        {sortedFloors.map(floor => (
           <React.Fragment key={floor}>
             <tr className="table__row">
               <td colSpan={6} className="table__td">
@@ -76,7 +76,7 @@ function RoomTable() {
               </td>
             </tr>
             {/* {expandedFloors.includes(floor) && */}
-            {groupRoomsByFloor()[floor].map((room) => (
+            {groupRoomsByFloor()[floor].map(room => (
               <Room room={room} key={room.id} />
             ))}
           </React.Fragment>

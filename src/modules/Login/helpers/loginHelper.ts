@@ -1,8 +1,8 @@
-import { useNavigate } from 'react-router-dom';
-import { useSigninMutation } from '../../../store/api/apiProfileSlice';
-import { useAppDispatch } from '../../../store/hooks/hooks';
-import { openInfoTooltipLogin } from '../store/infoTooltipLoginSlice';
-import { setIsLoggedIn } from '../../../store/reducers/authSlice';
+import { useNavigate } from "react-router-dom";
+import { useSigninMutation } from "../../../store/api/apiProfileSlice";
+import { useAppDispatch } from "../../../store/hooks/hooks";
+import { openInfoTooltipLogin } from "../store/infoTooltipLoginSlice";
+import { setIsLoggedIn } from "../../../store/reducers/authSlice";
 
 export const useLogin = () => {
   const dispatch = useAppDispatch();
@@ -13,7 +13,7 @@ export const useLogin = () => {
     try {
       await handleLogin({ email, password }).unwrap();
       dispatch(openInfoTooltipLogin("Вы успешно авторизировались!"));
-      navigate("/projects", { replace: true });
+      navigate("/teplo", { replace: true });
       dispatch(setIsLoggedIn(true));
     } catch {
       console.log(error);
