@@ -1,6 +1,7 @@
 export interface Project {
   id?: string;
   name: string;
+  region: string;
   tOutside: number;
   tInside: number;
   rWall: number;

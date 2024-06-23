@@ -56,6 +56,15 @@
   background-image: url(../../../ui/images/delete-button-hover.svg);
 }
 
+.table__delete_disabled {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: url(../../../ui/images/delete-button-dis.svg) no-repeat center center;
+  width: 18px;
+  height: 19px;
+}
+
 .table__td-button {
   display: flex;
   /* align-items: center; */
@@ -76,9 +85,14 @@
 
 .column1 {
   text-align: start;
-  width: 75%;
+  width: 60%;
   border-left: 0;
   padding-left: 24px;
+}
+
+.column1-1 {
+  width: 300px;
+  text-align: center;
 }
 .column2 {
   width: 200px;
@@ -91,11 +105,10 @@
 .column4 {
   width: 66px;
   text-align: center;
-  border-right: 0;
 }
 
 @media screen and (max-width: 1400px) {
   .column1 {
-    width: 65%;
+    width: 50%;
   }
 }

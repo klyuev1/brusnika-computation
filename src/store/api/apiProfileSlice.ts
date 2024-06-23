@@ -11,53 +11,97 @@ export interface ProfileView {
   email: string;
 }
 
+export interface ProfileViewWithRole {
+  id: string;
+  name: string;
+  email: string;
+  roles: Role[];
+}
+
+export interface Role {
+  value: string;
+  description: string;
+}
+
 export const apiProfileSlice = createApi({
-  reducerPath: 'apiProfile',
+  reducerPath: "apiProfile",
   baseQuery: fetchBaseQuery({
     baseUrl: BASE_URL,
-    credentials: 'include',
+    credentials: "include"
   }),
-  tagTypes: ['Profile'],
+  tagTypes: ["Profile"],
   endpoints: builder => ({
-    
     getUser: builder.query<ProfileView, void>({
       query: () => ({
-        url: '/users/me'
+        url: "/users/me"
       }),
-      providesTags: () => ['Profile'],
+      providesTags: () => ["Profile"]
     }),
     signup: builder.mutation<Profile, Partial<Profile>>({
-      query: (profile) => ({
-        url: '/signup',
-        method: 'POST',
-        body: profile,
+      query: profile => ({
+        url: "/signup",
+        method: "POST",
+        body: profile
       }),
-      invalidatesTags: ['Profile'],
+      invalidatesTags: ["Profile"]
     }),
-    signin: builder.mutation<Profile, {email: string, password: string}>({
-      query: ({email, password}) => ({
-        url: '/signin',
-        method: 'POST',
-        body: {email, password},
+    signin: builder.mutation<Profile, { email: string; password: string }>({
+      query: ({ email, password }) => ({
+        url: "/signin",
+        method: "POST",
+        body: { email, password }
       }),
-      invalidatesTags: ['Profile'],
+      invalidatesTags: ["Profile"]
     }),
     signout: builder.mutation<void, void>({
       query: () => ({
-        url: '/signout',
-        method: 'POST',
+        url: "/signout",
+        method: "POST"
       }),
-      invalidatesTags: ['Profile'],
+      invalidatesTags: ["Profile"]
     }),
     updateUser: builder.mutation<ProfileView, Partial<ProfileView>>({
-      query: (profile) => ({
-        url: '/users/me',
-        method: 'PATCH',
-        body: profile,
+      query: profile => ({
+        url: "/users/me",
+        method: "PATCH",
+        body: profile
       }),
-      invalidatesTags: ['Profile'],
+      invalidatesTags: ["Profile"]
     }),
-  })
-})
 
-export const { useGetUserQuery, useSignupMutation, useSigninMutation, useUpdateUserMutation, useSignoutMutation } = apiProfileSlice;
+    getAllUsers: builder.query<ProfileViewWithRole[], void>({
+      query: () => ({
+        url: "/users"
+      }),
+      providesTags: () => ["Profile"]
+    }),
+
+    changeRole: builder.mutation<ProfileViewWithRole, { userId: number; value: string }>({
+      query: ({ userId, value }) => ({
+        url: "/users/role",
+        method: "POST",
+        body: { userId, value }
+      }),
+      invalidatesTags: ["Profile"]
+    }),
+
+    deleteUser: builder.mutation<ProfileViewWithRole, Partial<ProfileViewWithRole>>({
+      query: user => ({
+        url: `/users/role/${user.id}`,
+        method: "DELETE"
+      }),
+      invalidatesTags: ["Profile"]
+    })
+  })
+});
+
+export const {
+  useGetUserQuery,
+  useSignupMutation,
+  useSigninMutation,
+  useUpdateUserMutation,
+  useSignoutMutation,
+  useGetAllUsersQuery,
+  useChangeRoleMutation,
+  useDeleteUserMutation
+} = apiProfileSlice;
