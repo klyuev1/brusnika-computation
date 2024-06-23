@@ -1,0 +1,10 @@
+.main-page-landscaping {
+  margin: 24px 0;
+  margin-left: 24px;
+  width: 100%;
+  min-height: 78vh;
+  
+  background: url(../../../ui/images/landscaping-main-page.svg) 0px no-repeat;
+  background-size: contain;
+  max-width: 1200px;
+}

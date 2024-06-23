@@ -62,6 +62,10 @@ input[type="number"] {
 /* Правила для Navbar*/
 @import url(./modules/Navbar/styles/Navbar.css);
 
+/* Правила для Facades */
+@import url(./modules/Collections/styles/Collections.css);
+@import url(./modules/Collections/styles/Collection.css);
+
 /* Правила для MainPage*/
 @import url(./pages/MainPage/styles/Main.css);
 @import url(./pages/MainPage/styles/NavTab.css);
@@ -72,5 +76,8 @@ input[type="number"] {
 /* Правила для NotFoundPage*/
 @import url(./pages/NotFoundPage/styles/NotFound.css);
 
-/* Правила для NotFoundPage*/
+/* Правила для TeploPage*/
 @import url(./pages/TeploPage/styles/TeploPage.css);
+
+/* Правила для TeploPage*/
+@import url(./pages/LandscapingPage/styles/LandscapingPage.css);

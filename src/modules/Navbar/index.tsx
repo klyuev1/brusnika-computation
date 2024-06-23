@@ -46,7 +46,7 @@ function Navbar() {
         {isLandscapingPage && (
           <>
             <Link className='navbar__link' to='/landscaping/projects'><div className='navbar__link-icon' />Проекты</Link>
-            <Link className='navbar__link' to='/landscaping/facades'><div className='navbar__link-icon' />Коллекции</Link>
+            <Link className='navbar__link' to='/landscaping/colections'><div className='navbar__link-icon' />Коллекции</Link>
           </>
         )}
       </div>
