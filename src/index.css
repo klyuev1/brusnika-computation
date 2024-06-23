@@ -62,9 +62,9 @@ input[type="number"] {
 /* Правила для Navbar*/
 @import url(./modules/Navbar/styles/Navbar.css);
 
-/* Правила для Facades */
+/* Правила для Collections */
 @import url(./modules/Collections/styles/Collections.css);
-@import url(./modules/Collections/styles/Collection.css);
+@import url(./modules/Collections/styles/CollectionTable.css);
 
 /* Правила для MainPage*/
 @import url(./pages/MainPage/styles/Main.css);

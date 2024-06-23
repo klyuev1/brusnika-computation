@@ -3,28 +3,14 @@ import { useAppDispatch } from "../../store/hooks/hooks";
 import { CollectionLogo } from '../../ui/icons/CollectionLogo';
 import { openCreateCollectionPopup } from './store/collectionPopupSlice';
 import CreateCollectionPopup from './components/CreateCollectionPopup';
-// import Facade from "./components/Facade";
-// import { useGetFacadesQuery } from "./api/apiFacadeSlice";
-// import { openCreateFacadePopup } from "./store/facadePopupSlice";
-// import CreateFacadePopup from './components/CreateFacadePopup';
-// import GetFacadePopup from './components/GetFacadePopup';
-
+import CollectionTable from './components/CollectionTable'
 
 function Collections() {
-  // const { data: facades, error } = useGetFacadesQuery();
   const dispatch = useAppDispatch();
 
   const handleCreateCollectionClick = () => {
     dispatch(openCreateCollectionPopup());
-    console.log(1);
   };
-
-  // useEffect(() => {
-  //   if (error) {
-  //     console.log(error);
-  //   }
-  // }, [error]);
-
 
   return (
     <>  
@@ -39,10 +25,7 @@ function Collections() {
             Создать коллекцию
           </button>
         </div>
-        
-        <section className="elements">
-        {/* {facades && facades.map((facade) => <Facade key={facade.id} facade={facade} />)} */}
-        </section>
+        <CollectionTable/>
       </section>
       
 

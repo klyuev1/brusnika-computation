@@ -15,6 +15,7 @@ import collectionPopupSlice from "../modules/Collections/store/collectionPopupSl
 import infoTooltipProfileSlice from "../modules/Profile/store/infoTooltipProfileSlice";
 import infoTooltipLoginSlice from "../modules/Login/store/infoTooltipLoginSlice";
 import infoTooltipRegisterSlice from "../modules/Register/store/infoTooltipRegisterSlice";
+import { apiCollectionSlice } from "../modules/Collections/api/apiCollectionSlice";
 
 export const rootReducer = combineReducers({
   auth: authReducer,
@@ -33,6 +34,7 @@ export const rootReducer = combineReducers({
   infoTooltipLogin: infoTooltipLoginSlice,
   infoTooltipRegister: infoTooltipRegisterSlice,
 
+  [apiCollectionSlice.reducerPath]: apiCollectionSlice.reducer,
   [apiProjectSlice.reducerPath]: apiProjectSlice.reducer,
   [apiRoomSlice.reducerPath]: apiRoomSlice.reducer,
   [apiFacadeSlice.reducerPath]: apiFacadeSlice.reducer,
@@ -43,7 +45,7 @@ export const setupStore = () => {
   return configureStore({
     reducer: rootReducer,
     middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(apiProjectSlice.middleware, apiRoomSlice.middleware, apiFacadeSlice.middleware, apiProfileSlice.middleware),
+    getDefaultMiddleware().concat(apiCollectionSlice.middleware, apiProjectSlice.middleware, apiRoomSlice.middleware, apiFacadeSlice.middleware, apiProfileSlice.middleware),
   })
 }
 

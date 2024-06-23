@@ -1,0 +1,99 @@
+.table-collections {
+  width: 100%;
+  border-collapse: collapse;
+  box-sizing: border-box;
+  border: 1px solid #b3b4b4;
+  border-top: none;
+}
+
+.table_head-collections {
+  box-sizing: border-box;
+  border: 1px solid #b3b4b4;
+  border-top: none;
+  padding-top: 17px;
+  padding-bottom: 17px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.01em;
+}
+
+.table_d-collections {
+  box-sizing: border-box;
+  border: 1px solid #b3b4b4;
+  padding-top: 17px;
+  padding-bottom: 17px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.01em;
+}
+
+.table__icon-collections {
+  background: url(../../../ui/images/proj-file.svg) no-repeat center center;
+  width: 12px;
+  height: 15px;
+  margin-right: 8px;
+  -webkit-transition: background-image 0.1s linear;
+  -moz-transition: background-image 0.1s linear;
+  -o-transition: background-image 0.1s linear;
+  -ms-transition: background-image 0.1s linear;
+  transition: background-image 0.1s linear;
+}
+.table__td-button-collections:hover .table__icon-collections {
+  background-image: url(../../../ui/images/proj-file-hover.svg);
+}
+
+.table__delete-collections {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: url(../../../ui/images/delete-button.svg) no-repeat center center;
+  width: 18px;
+  height: 19px;
+  cursor: pointer;
+  transition: background-image 0.1s linear;
+}
+.table__delete-collections:hover {
+  background-image: url(../../../ui/images/delete-button-hover.svg);
+}
+
+.table__td-button-collections {
+  display: flex;
+  /* align-items: center; */
+  color: #000;
+  text-decoration: none;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  text-align: start;
+  background-color: inherit;
+  cursor: pointer;
+  transition: color 0.1s linear;
+}
+.table__td-button-collections:hover {
+  color: #ef3b24;
+}
+
+.column1-coll {
+  text-align: start;
+  width: 75%;
+  border-left: 0;
+  padding-left: 24px;
+}
+.column2-coll {
+  width: 200px;
+  text-align: center;
+}
+.column3-coll {
+  width: 66px;
+  text-align: center;
+  border-right: 0;
+}
+
+@media screen and (max-width: 1400px) {
+  .column1 {
+    width: 65%;
+  }
+}
