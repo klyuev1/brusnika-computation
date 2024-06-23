@@ -1,0 +1,60 @@
+.element {
+  border-radius: 4px;
+  border: 2px rgba(20, 25, 26, 0.12) solid;
+  transition: border .1s linear;
+  width: 100%;
+  max-width: 200px;
+  height: 350px;
+  box-sizing: border-box;
+}
+.element:hover {
+  border: 2px #424242 solid;
+}
+.element__button{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #fff;
+  border: #fff;
+  cursor: pointer;
+}
+.element__photo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3px 6px;
+  width: 100%;
+  max-width: 187px;
+  height: 312px;
+}
+.element__number{
+  margin: 0;
+  
+  font-family: 'Grtsk-Exa', 'Arial', sans-serif;
+  align-self: center;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+}
+.element__div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-bottom: 6px;
+}
+.element__button-delete {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: url(../../../ui/images/delete-button.svg) no-repeat center;
+  width: 18px;
+  height: 19px;
+  cursor: pointer;
+  transition: background-image .1s linear;
+}
+.element__button-delete:hover {
+  background-image: url(../../../ui/images/delete-button-hover.svg);
+}

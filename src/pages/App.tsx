@@ -11,6 +11,8 @@ import FacadesPage from './FacadesPage';
 import ProfilePage from './ProfilePage';
 import NotFoundPage from './NotFoundPage';
 import TeploPage from './TeploPage';
+import LandscapingPage from './LandscapingPage';
+import CollectionsPage from './CollectionsPage';
 
 function App() {
   const dispatch = useAppDispatch();
@@ -35,6 +37,8 @@ function App() {
         <Route path='/teplo/facades' element={ <FacadesPage /> }/>
         <Route path='/teplo' element={<TeploPage />}/>
 
+        <Route path='/landscaping' element={<LandscapingPage/>}/>
+        <Route path='/landscaping/colections' element={ <CollectionsPage /> }/>
 
 
         <Route path="*" element={<NotFoundPage />}/>

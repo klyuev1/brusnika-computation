@@ -11,6 +11,7 @@ import projectPopupSlice from "../modules/Projects/store/projectPopupSlice";
 import facadePopupSlice from "../modules/Facades/store/facadePopupSlice";
 import infoTooltipFacadeSlice from "../modules/Facades/store/infoTooltipFacadeSlice";
 import roomPopupSlice from "../modules/Rooms/store/roomPopupSlice";
+import collectionPopupSlice from "../modules/Collections/store/collectionPopupSlice";
 import infoTooltipProfileSlice from "../modules/Profile/store/infoTooltipProfileSlice";
 import infoTooltipLoginSlice from "../modules/Login/store/infoTooltipLoginSlice";
 import infoTooltipRegisterSlice from "../modules/Register/store/infoTooltipRegisterSlice";
@@ -24,6 +25,7 @@ export const rootReducer = combineReducers({
   projectPopup: projectPopupSlice,
   facadePopup: facadePopupSlice,
   roomPopup: roomPopupSlice,
+  collectionPopup: collectionPopupSlice,
 
   // infoTooltips
   infoTooltipFacade: infoTooltipFacadeSlice,
